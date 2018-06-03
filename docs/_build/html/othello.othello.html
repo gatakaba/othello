@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>othello.othello module &mdash; othello  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> othello
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="othello.html">othello package</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">othello</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>othello.othello module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/othello.othello.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-othello.othello">
+<span id="othello-othello-module"></span><h1>othello.othello module<a class="headerlink" href="#module-othello.othello" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="othello.othello.Board">
+<em class="property">class </em><code class="descclassname">othello.othello.</code><code class="descname">Board</code><a class="reference internal" href="_modules/othello/othello.html#Board"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Board" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>盤面の状態および盤面操作を管理する</p>
+<blockquote>
+<div>盤面の状態状態を保持した二次元配列</div></blockquote>
+<dl class="method">
+<dt id="othello.othello.Board.check_select">
+<code class="descname">check_select</code><span class="sig-paren">(</span><em>x_index: int</em>, <em>y_index: int</em>, <em>turn: othello.othello.Turn</em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/othello/othello.html#Board.check_select"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Board.check_select" title="Permalink to this definition">¶</a></dt>
+<dd><p>置くことができるかチェックする</p>
+<blockquote>
+<div><p>8方向に対し、以下の条件を満たしているかを確認する</p>
+<ol class="arabic simple">
+<li>チェック対象に近接しているセルが異なる色である</li>
+<li>1.以降の色が異なる色または同じ色</li>
+</ol>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x_index</strong> – x座標</li>
+<li><strong>y_index</strong> – y座標</li>
+<li><strong>turn</strong> – 現在のターン</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">置ける場合はTrueを返し、置けない場合はFalseを返す</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="othello.othello.Board.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>turn</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Board.count"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Board.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>駒の数を数える</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="othello.othello.Board.get_available_cell">
+<code class="descname">get_available_cell</code><span class="sig-paren">(</span><em>turn: othello.othello.Turn</em><span class="sig-paren">)</span> &#x2192; list<a class="reference internal" href="_modules/othello/othello.html#Board.get_available_cell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Board.get_available_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>置くことができるセルを返す</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="othello.othello.Board.show_board">
+<code class="descname">show_board</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Board.show_board"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Board.show_board" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="othello.othello.Board.update_board">
+<code class="descname">update_board</code><span class="sig-paren">(</span><em>x_index: int</em>, <em>y_index: int</em>, <em>turn: othello.othello.Turn</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Board.update_board"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Board.update_board" title="Permalink to this definition">¶</a></dt>
+<dd><p>盤面を更新する</p>
+<p>8方向に対し、置くことができるかを確認し、置けることができる場合、
+その方向に対し、同じ色を置く</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x_index</strong> – x座標</li>
+<li><strong>y_index</strong> – y座標</li>
+<li><strong>turn</strong> – 現在のターン</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="othello.othello.Othello">
+<em class="property">class </em><code class="descclassname">othello.othello.</code><code class="descname">Othello</code><span class="sig-paren">(</span><em>verbose=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Othello"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Othello" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="othello.othello.Othello.change_turn">
+<code class="descname">change_turn</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Othello.change_turn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Othello.change_turn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="othello.othello.Othello.check_finish">
+<code class="descname">check_finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Othello.check_finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Othello.check_finish" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="othello.othello.Othello.get_input">
+<code class="descname">get_input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Othello.get_input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Othello.get_input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="othello.othello.Othello.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/othello/othello.html#Othello.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Othello.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="othello.othello.Turn">
+<em class="property">class </em><code class="descclassname">othello.othello.</code><code class="descname">Turn</code><a class="reference internal" href="_modules/othello/othello.html#Turn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#othello.othello.Turn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="attribute">
+<dt id="othello.othello.Turn.black">
+<code class="descname">black</code><em class="property"> = 1</em><a class="headerlink" href="#othello.othello.Turn.black" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="othello.othello.Turn.white">
+<code class="descname">white</code><em class="property"> = -1</em><a class="headerlink" href="#othello.othello.Turn.white" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Author.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

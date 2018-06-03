@@ -1,0 +1,17 @@
+@startuml{main.png}
+
+class Board {
+  + board: array-like
+  + count_piece()
+  + show_board()
+  + get_aveilable_cell()
+  + check_select()
+  - _check_select()
+  + update_board()
+}
+
+class Othello()
+{
+
+}
+@enduml

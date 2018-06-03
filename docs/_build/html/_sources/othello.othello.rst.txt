@@ -1,0 +1,7 @@
+othello\.othello module
+=======================
+
+.. automodule:: othello.othello
+    :members:
+    :undoc-members:
+    :show-inheritance:
